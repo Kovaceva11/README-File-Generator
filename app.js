@@ -1,5 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const { create } = require('domain');
 
 // Use writeFileSync method to use promises instead of a callback function
 
@@ -81,30 +82,35 @@ function getLicense(License) {
 // .then((License)=> fs.writeFileSync('LICENSE.md', licenseJargon(License)))
 
 
-function licenseJargon(License){
+function createLicenseMd(License){
     let x;
     switch(License) {
-        case "MIT":
+        case "MIT": {
          x = {choices: "MIT", jargon: "insert MIT legal jargon here"};
-        break;
-        case "Apache 2.0":
+        break;}
+        case "Apache 2.0": {
         x = {choices: "Apache 2.0", jargon: "insert APACHE legal jargon here"};
-        break;
-        case "GNU GPL 3.0":
+        break;}
+        case "GNU GPL 3.0": {
         x = {choices: "GNU GPL 3.0", jargon: "insert GNU legal jargon here"};
-        break;      
+        break;}      
     }
-    // return `#${x.choices}  ##${x.jargon}`;
+    return `#${x.choices}  ##${x.jargon}`;
 }
 
+// const createLicenseMd = (License) => ({
+//   mit: "MIT",
+//   apache: "Apache 2.0",
+//   gnu: "GNU GPL 3.0",
+// })[License]
 // const licenseInfo = ['MIT', 'Apache 2.0', 'GNU GPL 3.0'];
 // const [test, testing, tested] = licenseInfo
 // console.log(test, testing, tested);
 
 
 function buildLicenseFile() {
-    return `# add license text here ${licenseJargon}`;
-}
+    return `${createLicenseMd}`;
+};
 
 function buildREADME({ Title, Description, Deployed, Github, Installation, License, Usage, Credits, Contribute, Tests }) {
     return `# ${Title}
@@ -134,6 +140,7 @@ function buildREADME({ Title, Description, Deployed, Github, Installation, Licen
   ## License  
   ${getLicense(License)}
   
+
   ## Badges  
   ![Your Repository's Stats](https://github-readme-stats.vercel.app/api?username=Kovaceva11&show_icons=true)  
   ![Your Repository's Stats](https://github-readme-stats.vercel.app/api/top-langs/?username=Kovaceva11&theme=blue-green)  
