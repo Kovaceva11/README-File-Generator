@@ -74,6 +74,7 @@ function getLicense(License) {
     }
     
     return `![License](https://img.shields.io/static/v1?label=license&message=${badge.name}&color=${badge.color})`;
+
 };
 
   // use writeFileSync to create license.md with selected License's legal jargon
@@ -93,7 +94,7 @@ function licenseJargon(License){
         x = {choices: "GNU GPL 3.0", jargon: "insert GNU legal jargon here"};
         break;      
     }
-    return `#${x.choices}  ##${x.jargon}`;
+    // return `#${x.choices}  ##${x.jargon}`;
 }
 
 // const licenseInfo = ['MIT', 'Apache 2.0', 'GNU GPL 3.0'];
@@ -102,7 +103,7 @@ function licenseJargon(License){
 
 
 function buildLicenseFile() {
-    return `# ${x.choices}`;
+    return `# add license text here ${licenseJargon}`;
 }
 
 function buildREADME({ Title, Description, Deployed, Github, Installation, License, Usage, Credits, Contribute, Tests }) {

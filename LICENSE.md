@@ -1,4 +1,4 @@
-# function licenseJargon(License){
+# add license text here function licenseJargon(License){
     let x;
     switch(License) {
         case "MIT":
@@ -11,5 +11,5 @@
         x = {choices: "GNU GPL 3.0", jargon: "insert GNU legal jargon here"};
         break;      
     }
-    return `#${x.choices}  ##${x.jargon}`;
+    // return `#${x.choices}  ##${x.jargon}`;
 }
