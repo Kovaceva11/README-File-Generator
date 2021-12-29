@@ -125,9 +125,9 @@ function buildREADME({ Title, Description, Deployed, Github, Installation, Licen
   ![Your Repository's Stats](https://github-readme-stats.vercel.app/api/top-langs/?username=Kovaceva11&theme=blue-green)  
   ## License  
   ${getLicense(License)}  
-  ~~~
+ 
   ![Link to License](./LICENSE.md)
-  ~~~
+ 
   
   ## Contribute  
   ${Contribute}  
