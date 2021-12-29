@@ -1,9 +1,9 @@
+// TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-
-
 // Prompts user in the terminal with a serious of questions. Uses promises instead of callbacks and writeFileSync to create a new README.md and LICENSE.md files upon completion.
+// TODO: Create an array of questions for user input
 const promptUser = () => {
   return inquirer.prompt([
     {
@@ -60,7 +60,9 @@ const promptUser = () => {
   ]);
 };
 
-// Get License selected from list and change the name and color of the shields.io license badge. 
+// Get License selected from list and change the name and color of the shields.io license badge.
+// TODO: Create a function that returns a license badge based on which license is passed in
+// If there is no license, return an empty string 
 function getLicense(License) {
     let licenseIcon;
     switch (License) {
@@ -78,7 +80,8 @@ function getLicense(License) {
 
 };
 
-// Get License selected from list and return the correct legalese for each license. Use with writeFileSync. 
+// Get License selected from list and return the correct legalese for each license. Use with writeFileSync.
+// TODO: Create a function that returns the license link
 function createLicenseMd(License){
     let x;
     switch(License) {
@@ -93,6 +96,9 @@ function createLicenseMd(License){
 }
 
 // this function returns the answers from the prompt questions to be used with writeFileSync to create the README.md and LICENSE.md files.
+// TODO: Create a function that returns the license section of README
+// TODO: Create a function to generate markdown for README
+// TODO: Add Questions subheading with Email Address Answer Question. Create Link.
 function buildREADME({ Title, Description, Deployed, Github, Installation, License, Usage, Credits, Contribute, Tests }) {
   fs.writeFileSync('LICENSE.md', createLicenseMd(License));
   
@@ -110,6 +116,9 @@ function buildREADME({ Title, Description, Deployed, Github, Installation, Licen
 
   ## Description  
   ${Description}  
+  ## License  
+  ${getLicense(License)}  
+  [Link to License](./LICENSE.md)     
   ## Deployed Application  
   ${Deployed}  
   ## Github Repo  
@@ -122,17 +131,17 @@ function buildREADME({ Title, Description, Deployed, Github, Installation, Licen
   ${Credits} 
    ## Badges  
   ![Your Repository's Stats](https://github-readme-stats.vercel.app/api?username=Kovaceva11&show_icons=true)  
-  ![Your Repository's Stats](https://github-readme-stats.vercel.app/api/top-langs/?username=Kovaceva11&theme=blue-green)  
-  ## License  
-  ${getLicense(License)}   
-  [Link to License](./LICENSE.md)   
+  ![Your Repository's Stats](https://github-readme-stats.vercel.app/api/top-langs/?username=Kovaceva11&theme=blue-green)        
   ## Contribute  
   ${Contribute}  
   ## Tests  
   ${Tests}    
   `;
 }
+
 // This is the init function using writefileSync to create the README file
+// TODO: Create a function to write README file
+// TODO: Create a function to initialize app
 function init() {
     promptUser()
         .then((answers) => fs.writeFileSync('README.md', buildREADME(answers)))
@@ -141,9 +150,10 @@ function init() {
         .catch((err) => console.error(err));
 }
 
+// Function call to initialize app
 init();
 
-// This is the start of a HUGE wall of text. These are the functions to get the legalese for each of the Licenses which are written to the README.md and LICENSE.md Files. 
+// This is the start of a HUGE wall of text. These are the functions to write the legalese for each of the Licenses which are written to the README.md and LICENSE.md Files. 
 function mitFunction() {
   return `MIT License
 
