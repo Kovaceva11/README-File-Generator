@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const fsp = require("fs/promises");
+
 
 
 // Use writeFileSync method to use promises instead of a callback function
@@ -91,7 +91,6 @@ function createLicenseMd(License){
     }
     return License;    
 }
-
 
 function buildREADME({ Title, Description, Deployed, Github, Installation, License, Usage, Credits, Contribute, Tests }) {
   fs.writeFileSync('LICENSE.md', createLicenseMd(License));
