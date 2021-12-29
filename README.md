@@ -28,7 +28,7 @@
   ## License  
   ![License](https://img.shields.io/static/v1?label=license&message=MIT&color=blue)  
  
-  ![Link to License](./LICENSE.md)
+  [Link to License](./LICENSE.md)
  
   
   ## Contribute  

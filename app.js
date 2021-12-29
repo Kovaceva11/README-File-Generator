@@ -126,7 +126,7 @@ function buildREADME({ Title, Description, Deployed, Github, Installation, Licen
   ## License  
   ${getLicense(License)}  
  
-  ![Link to License](./LICENSE.md)
+  [Link to License](./LICENSE.md)
  
   
   ## Contribute  
