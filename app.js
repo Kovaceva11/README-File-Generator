@@ -3,8 +3,7 @@ const fs = require('fs');
 
 
 
-// Use writeFileSync method to use promises instead of a callback function
-
+// Prompts user in the terminal with a serious of questions. Uses promises instead of callbacks and writeFileSync to create a new README.md and LICENSE.md files upon completion.
 const promptUser = () => {
   return inquirer.prompt([
     {
@@ -61,7 +60,7 @@ const promptUser = () => {
   ]);
 };
 
-
+// Get License selected from list and change the name and color of the shields.io license badge. 
 function getLicense(License) {
     let licenseIcon;
     switch (License) {
@@ -79,6 +78,7 @@ function getLicense(License) {
 
 };
 
+// Get License selected from list and return the correct legalese for each license. Use with writeFileSync. 
 function createLicenseMd(License){
     let x;
     switch(License) {
@@ -92,6 +92,7 @@ function createLicenseMd(License){
     return License;    
 }
 
+// this function returns the answers from the prompt questions to be used with writeFileSync to create the README.md and LICENSE.md files.
 function buildREADME({ Title, Description, Deployed, Github, Installation, License, Usage, Credits, Contribute, Tests }) {
   fs.writeFileSync('LICENSE.md', createLicenseMd(License));
   
@@ -123,24 +124,17 @@ function buildREADME({ Title, Description, Deployed, Github, Installation, Licen
   ![Your Repository's Stats](https://github-readme-stats.vercel.app/api?username=Kovaceva11&show_icons=true)  
   ![Your Repository's Stats](https://github-readme-stats.vercel.app/api/top-langs/?username=Kovaceva11&theme=blue-green)  
   ## License  
-  ${getLicense(License)}  
- 
-  [Link to License](./LICENSE.md)
- 
-  
+  ${getLicense(License)}   
+  [Link to License](./LICENSE.md)   
   ## Contribute  
   ${Contribute}  
   ## Tests  
-  ${Tests}  
-  
+  ${Tests}    
   `;
 }
-
-
-// Bonus using writeFileSync as a promise
+// This is the init function using writefileSync to create the README file
 function init() {
     promptUser()
-        // Use writeFileSync method to use promises instead of a callback function
         .then((answers) => fs.writeFileSync('README.md', buildREADME(answers)))
         .then(() => console.log('Successfully wrote to readme.md'))
         .then(() => console.log('Successfully wrote to LICENSE.md'))
@@ -149,7 +143,7 @@ function init() {
 
 init();
 
-
+// This is the start of a HUGE wall of text. These are the functions to get the legalese for each of the Licenses which are written to the README.md and LICENSE.md Files. 
 function mitFunction() {
   return `MIT License
 
