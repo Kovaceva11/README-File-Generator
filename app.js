@@ -57,6 +57,11 @@ const promptUser = () => {
         name: 'Tests',
         message: 'Write tests for the application and examples how to run them here',
       },
+      {
+        type: 'input',
+        name: 'Email',
+        message: 'Enter email address here.',
+      },
   ]);
 };
 
@@ -99,7 +104,7 @@ function createLicenseMd(License){
 // TODO: Create a function that returns the license section of README
 // TODO: Create a function to generate markdown for README
 // TODO: Add Questions subheading with Email Address Answer Question. Create Link.
-function buildREADME({ Title, Description, Deployed, Github, Installation, License, Usage, Credits, Contribute, Tests }) {
+function buildREADME({ Title, Description, Deployed, Github, Installation, License, Usage, Credits, Contribute, Tests, Email }) {
   fs.writeFileSync('LICENSE.md', createLicenseMd(License));
   
   return `# ${Title}
@@ -135,7 +140,10 @@ function buildREADME({ Title, Description, Deployed, Github, Installation, Licen
   ## Contribute  
   ${Contribute}  
   ## Tests  
-  ${Tests}    
+  ${Tests}  
+  ## Questions?  
+  [Contact Me via Email Here](mailto:${Email})   
+      
   `;
 }
 
