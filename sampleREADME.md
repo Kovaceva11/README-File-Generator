@@ -14,7 +14,7 @@
   This is a professional README file generator using Node.JS, Inquirer and Javascript via a command line prompt. This applicaiton helps users to quickly create a professional README File. Please note, some more advanced markdown capabilities are not provided in this application. However, they can be modified once you have saved your new README template.  
   ## Deployed Application     
    
-  ![demo](./assets/README Generator App Video.webm)
+  ![demo](https://drive.google.com/file/d/1ldUtewiSLKKpUxJ7LGrDekN41iJIIdTe/view?usp=sharing)
 
   ## Github Repo  
   https://github.com/Kovaceva11/README-File-Generator  
