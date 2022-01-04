@@ -12,6 +12,11 @@
 
   ## Description  
   This is the official README file for my README-File-Generator app. This app utilizes Node.JS, Inquirer and Javascript via a command line prompt. This applicaiton helps users to quickly create a professional README File and matching License File.
+  ## License  
+  ![License](https://img.shields.io/static/v1?label=license&message=MIT&color=blue)  
+ 
+  [Link to License](./LICENSE.md)
+ 
   ## Deployed Application     
    
   [Click here to view the demo video](https://drive.google.com/file/d/1ldUtewiSLKKpUxJ7LGrDekN41iJIIdTe/view?usp=sharing)  
