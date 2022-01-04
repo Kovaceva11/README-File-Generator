@@ -14,7 +14,7 @@
   This is the official README file for my README-File-Generator app. This app utilizes Node.JS, Inquirer and Javascript via a command line prompt. This applicaiton helps users to quickly create a professional README File and matching License File.
   ## Deployed Application     
    
-  ![demo](https://drive.google.com/file/d/1ldUtewiSLKKpUxJ7LGrDekN41iJIIdTe/view?usp=sharing)
+  [demo video](https://drive.google.com/file/d/1ldUtewiSLKKpUxJ7LGrDekN41iJIIdTe/view?usp=sharing)
 
   ## Github Repo  
   https://github.com/Kovaceva11/README-File-Generator  
