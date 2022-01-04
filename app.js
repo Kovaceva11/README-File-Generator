@@ -152,7 +152,7 @@ function buildREADME({ Title, Description, Deployed, Github, Installation, Licen
 // TODO: Create a function to initialize app
 function init() {
     promptUser()
-        .then((answers) => fs.writeFileSync('README.md', buildREADME(answers)))
+        .then((answers) => fs.writeFileSync('generatedREADME.md', buildREADME(answers)))
         .then(() => console.log('Successfully wrote to readme.md'))
         .then(() => console.log('Successfully wrote to LICENSE.md'))
         .catch((err) => console.error(err));
