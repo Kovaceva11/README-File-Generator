@@ -32,13 +32,7 @@
   MDN, Stackoverflow, npmjs,  
    ## Badges  
   ![Your Repository's Stats](https://github-readme-stats.vercel.app/api?username=Kovaceva11&show_icons=true)  
-  ![Your Repository's Stats](https://github-readme-stats.vercel.app/api/top-langs/?username=Kovaceva11&theme=blue-green)  
-  ## License  
-  ![License](https://img.shields.io/static/v1?label=license&message=MIT&color=blue)  
- 
-  [Link to License](./LICENSE.md)
- 
-  
+  ![Your Repository's Stats](https://github-readme-stats.vercel.app/api/top-langs/?username=Kovaceva11&theme=blue-green)   
   ## Contribute  
   No contributions requested at this time.  
   ## Tests  
