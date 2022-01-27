@@ -25,7 +25,12 @@ const promptUser = () => {
         type: 'input',
         name: 'Github',
         message: 'Add link to Github Repository',
-      },    
+      },
+      {
+        type: 'input',
+        name: 'GithubUsername',
+        message: 'Enter your GitHub Username?',
+      },     
     {
       type: 'input',
       name: 'Installation',
@@ -104,7 +109,7 @@ function createLicenseMd(License){
 // TODO: Create a function that returns the license section of README
 // TODO: Create a function to generate markdown for README
 // TODO: Add Questions subheading with Email Address Answer Question. Create Link.
-function buildREADME({ Title, Description, Deployed, Github, Installation, License, Usage, Credits, Contribute, Tests, Email }) {
+function buildREADME({ Title, Description, Deployed, Github,GithubUsername, Installation, License, Usage, Credits, Contribute, Tests, Email }) {
   fs.writeFileSync('LICENSE.md', createLicenseMd(License));
   
   return `# ${Title}
@@ -135,8 +140,8 @@ function buildREADME({ Title, Description, Deployed, Github, Installation, Licen
   ## Credits  
   ${Credits} 
    ## Badges  
-  ![Your Repository's Stats](https://github-readme-stats.vercel.app/api?username=Kovaceva11&show_icons=true)  
-  ![Your Repository's Stats](https://github-readme-stats.vercel.app/api/top-langs/?username=Kovaceva11&theme=blue-green)        
+  ![Your Repository's Stats](https://github-readme-stats.vercel.app/api?username=${GithubUsername}&show_icons=true)  
+  ![Your Repository's Stats](https://github-readme-stats.vercel.app/api/top-langs/?username=${GithubUsername}&theme=blue-green)        
   ## Contribute  
   ${Contribute}  
   ## Tests  
@@ -151,11 +156,11 @@ function buildREADME({ Title, Description, Deployed, Github, Installation, Licen
 // TODO: Create a function to write README file
 // TODO: Create a function to initialize app
 function init() {
-    promptUser()
-        .then((answers) => fs.writeFileSync('generatedREADME.md', buildREADME(answers)))
-        .then(() => console.log('Successfully wrote to readme.md'))
-        .then(() => console.log('Successfully wrote to LICENSE.md'))
-        .catch((err) => console.error(err));
+  promptUser()
+      .then((answers) => fs.writeFileSync('generatedREADME.md', buildREADME(answers)))
+      .then(() => console.log('Successfully wrote to readme.md'))
+      .then(() => console.log('Successfully wrote to LICENSE.md'))
+      .catch((err) => console.error(err));
 }
 
 // Function call to initialize app
